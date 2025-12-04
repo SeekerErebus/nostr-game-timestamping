@@ -46,7 +46,7 @@ class BitTimeStamp:
                 height_resp = self.__session.get(url, timeout=self.__timeout)
                 height_resp.raise_for_status()
                 return int(height_resp.json())
-            except requests.exceptions.RequestException as e:
+            except requests.exceptions.RequestException:
                 if attempt < max_retries - 1:
                     wait_time = 2 ** attempt
                     time.sleep(wait_time)
@@ -61,7 +61,7 @@ class BitTimeStamp:
                 hash_resp.raise_for_status()
                 block_hash = hash_resp.json()
                 return int(block_hash, 16)
-            except requests.exceptions.RequestException as e:
+            except requests.exceptions.RequestException:
                 if attempt < max_retries - 1:
                     wait_time = 2 ** attempt
                     time.sleep(wait_time)

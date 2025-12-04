@@ -1,7 +1,7 @@
 [project]
 name = "nostr-game-timestamping"
 version = "0.1.0"
-description = "Add your description here"
+description = "A support library for using the Bitcoin Mainnet as a 'turn marker' in game data, enabling less centralized turn based games over nostr."
 readme = "README.md"
 authors = [
     { name = "SeekerErebus", email = "jadeofsapphire@pm.me" }
